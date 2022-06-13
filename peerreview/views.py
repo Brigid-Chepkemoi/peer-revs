@@ -162,3 +162,22 @@ def submit_project(request):
     }
 
     return render(request, "submit-project.html", ctx)
+
+@login_required(login_url='login')
+def search_results(request):
+    if request.GET['search_projects'] and 'search_projects' in request.GET:
+        name = request.GET.get("search_projects")
+        results = UserProfile.search_projects(name)
+        for r in results:
+            print(r.user)
+        message = f'{name}'
+        params = {
+            'results': results,
+            'message': message,
+            'name': name,
+
+        }
+        return render(request, 'peerreviews/search.html', params)
+    else:
+        message = "You haven't searched for any user"
+    return render(request, 'peerreviews/search.html', {'message': message})
