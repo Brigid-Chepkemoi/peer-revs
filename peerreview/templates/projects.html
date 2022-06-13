@@ -1,0 +1,129 @@
+{%extends 'base.html'%}
+
+{%load static%}
+{%load bootstrap3%}
+{%block content%}
+
+
+
+
+<div class="container ">
+  <div class="row justify-content-center">
+
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <!-- <a  href="{%url 'index'%}" class="btn btn-primary my-3 "> Go Back</a> -->
+
+        <div class="project" style="height: 90vh">
+          <a href="{{project.link}}" target="_blank">
+
+
+            <img style="max-width: 100%; max-height: 100%;" src="{{project.image.url}}" alt=""></a>
+
+          <!-- <p class="desc">View</p> -->
+
+        </div>
+      </div>
+      <div class="col-md-4">
+
+
+
+        <div class="card" style="width: 18rem; margin-top: 20px;">
+          <div class="card-body">
+            <p>Name Of The Project :{{project.name}}</p>
+            <p>Description :{{project.description}}</p>
+            <p>Technologies :{{project.technologies}}</p>
+            <p>User :{{project.user}}</p>
+            <p>Date :{{project.posted_at| date}}</p>
+            <a href="{{project.link}}" target="_blank">Link :</a>
+            <button><a href="{{project.link}}" target="_blank">Link</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="card" style="width: 18rem; margin-top: 20px;">
+          <div class="card-body">
+
+            <p class="text-center h3"> Users Project Rated</p>
+
+            {% if ratings %}
+            <div class="rating-container text-center">
+              <div class="score">
+                <div class="first">{{ ratings.design_average }}</div>
+                <span>Design Average</span>
+              </div>
+              <div class="score">
+                <div class="second">{{ ratings.usability_average }}</div>
+                <span>Usability Average</span>
+              </div>
+              <div class="score">
+                <div class="third">{{ ratings.content_average }}</div>
+                <span>Content Average</span>
+              </div>
+              <div class="score">
+                <div class="last">{{ ratings.score }}</div>
+                <span>Average Score</span>
+              </div>
+            </div>
+            {%else%}
+            <div class="rating-container text-center">
+              <div class="score">
+                <div class="first">0.00</div>
+                <span>Design Average</span>
+              </div>
+              <div class="score">
+                <div class="second">0.00</div>
+                <span>Usability Average</span>
+              </div>
+              <div class="score">
+                <div class="third">0.00</div>
+                <span>Content Average</span>
+              </div>
+              <div class="score">
+                <div class="last">0.00</div>
+                <span>Average Score</span>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div>
+            <p class="h4"><b> Technologies </b></p>
+            {% for tag in tech_tags %}
+            <button class="btn-tag mr-2">{{tag}}</button>
+
+            {% endfor %}
+            <div class="form-wrapper mb-0">
+              {% if rates_status%}
+
+              <p class="m-4 text-center h4">You have already voted</p>
+              {%else%}
+            </div>
+          </div>
+        </div>
+        <br>
+        
+
+        {% endif %}
+
+
+
+
+
+
+      </div>
+    
+
+  <div class="col-md-6">
+        <div class="form">
+          <p class="text-center h3">Rate Project</p>
+          <form action="{%url 'projects' project.id %}" method="post" enctype="multipart/form-data">
+            {%csrf_token%} {% bootstrap_form form %}
+            <input type="submit" class="btn btn-primary" value="Vote" />
+          </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+{%load bootstrap3%}
+{%block content%}
+
+<div class="container">
+
+<img src="{{user.image.url}}" 
+style="width: 200px; 
+height: 200px;
+display: block;
+  margin-left: auto;
+  border-radius: 50%;
+  margin-right: auto;"
+alt="">
+<div class="text-center">
+    {{ user.user_name }}
+    <br>
+    <br>
+    {{user.bio}}
+    <br>
+    <br>
+    {{user.user.email}}
+    <br>
+    </div>
+
+<br>
+<div class="form-group m-3">
+    <h4 class="">Update Profile</h4>
+    <form method="post" action="/accounts/profile/" class="form">
+        {% csrf_token %} {%bootstrap_form form%}
+        <div class="form-group">
+            
+            <input type="submit" class="btn btn-primary btn-sm" value="update">
+        </div>
+
+    </form>
+</div>
+</div>
+{%endblock%}

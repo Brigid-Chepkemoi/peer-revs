@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+<!-- bootstrap -->
+{% load bootstrap3 %}
+<!-- html -->
+{% block content %}
+<!-- content -->
+<div class="container mt-4">
+  <div class="form mb-5">
+    <h4 class="text-center">Submit Project</h4>
+    <form
+      action="{%url 'submit-project' %}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {%csrf_token%} {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock%}
