@@ -1,0 +1,129 @@
+.box{
+    background-image: url("https://images.unsplash.com/photo-1541663559752-878ef061a6da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+    padding: 200px 200px;
+    margin-top: 20px;
+    margin-right: 1px;
+    margin-left: 1px;
+  
+    background-position: center;
+    position: relative;
+
+
+    background-repeat: no-repeat;
+    background: cover;
+    background-size: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1541663559752-878ef061a6da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+    height: 100%;
+   
+    
+
+}
+.HE a{
+
+text-decoration: none;
+color: #ffffff;
+}
+.HE,a:hover{
+
+  text-decoration: none;
+  color: #5d85f1;
+  }
+
+.image{
+    position: relative;
+    width: 50px;
+
+}
+.image1{
+    display: block;
+    width: 5%;
+}
+.img-overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-right:20px;
+    margin-left: 15px;
+    margin-bottom: none;
+    padding: 0;
+    width: 45%;
+    height: 60%;
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    text-decoration: none;
+    transition: opacity 0.25s;
+
+}
+.img-overlay:hover{
+    opacity: 1;
+
+}
+.img-title{
+    font-size: 1em;
+    font-weight: 500;
+
+}
+.descr{
+    font-size: 1.5em;
+    margin-top: 0.25em;
+
+}
+.frame {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+  }
+  .zoomin img {
+    height: 200px;
+    width: 200px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .zoomin img:hover {
+    width: 220px;
+    height: 220px;
+  }
+  #overlay{
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-x: hidden;
+    overflow-y: hidden;
+  
+  
+  }
+  .menu-btn {
+    border-radius: 15px;
+    margin-top: 20px;
+    color: #000;
+  }
+  #menus{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  background-image: url('../images/wood.jpg');
+    /* background-color: darkslategray; */
+  
+    margin-top: 5px;
+  }
+  .wiggle {
+    overflow-y: hidden;
+   
+    border-radius: 10%;
+    
+    width: 200px;
+    height: 200px;
+    -webkit-animation: spin 1 linear infinite; 
+    animation: spin 20s linear infinite;
+  }
+      
