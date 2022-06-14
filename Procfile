@@ -1,1 +1,1 @@
-web: gunicorn peerreview.wsgi
+web: gunicorn peerrev.wsgi
