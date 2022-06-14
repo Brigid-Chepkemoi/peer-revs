@@ -33,9 +33,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-cloud_name='de7cwzlea'
-CLOUDINARY_API_KEY='634526848771819'
-CLOUDINARY_API_SECRET='lnXwswHqpmoxK956gVlySSxsmG8'
+
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
@@ -169,4 +167,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 django_heroku.settings(locals())
-
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+)
