@@ -9,7 +9,7 @@ A Django instagram clone web application for storing and viewing pictures.
 It has different categories of the pictures, one can filetr to see the pictures based on locations and categories.
 They can view the descriptions of the pictures and authors.
 ## Live Link
-https://galaxy-insta-app.herokuapp.com/
+https://peer-revs-app.herokuapp.com/
 
 
 ## Setup/Installation Requirements
@@ -21,15 +21,12 @@ Django dependencies
 
 The user is able to;
 
-- Search based on profiles.
-
-- Follow other users.
-
-- View pictures posted by others and themselves.
-
-- Like pictures.
-
-- Comment on pictures.
+-View posted projects and their details
+-Post a project to be rated/reviewed
+-Rate/ review other users' projects
+-Search for projects 
+-View projects overall score
+-View their profile page
 
 
 ## Technologies
