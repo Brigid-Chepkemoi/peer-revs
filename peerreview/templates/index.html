@@ -11,8 +11,8 @@
 
 {% for project in profiles %}
                <div class="col-md-4 ">
-                <div class="card my-2">
-                    <a href="{%url 'project' project.id%}"><img class="image1" src="{{project.image.url}}" alt="Card image cap"></a>
+                <div class="card my-2" style="width: 100px;">
+                    <a href="{%url 'project' project.id%}"><img style="width: 90vh; max-height: 90vh;"  class="image1" src="{{project.image.url}}" alt="Card image cap"></a>
                     <div class="card-body">
                       <hr>
                       <small>Category: {{project.technologies}}</small>
@@ -60,7 +60,7 @@
        <div class="col-md-4 container ">
         <div class="card my-2 row">
           <div class="image ">
-            <a href="{%url 'projects' project.id%}"><img class="image1 zoomin frame" src="{{project.image.url}}"  style="width: 200px; height: 200px;"alt="Card image cap"></a>
+            <a href="{%url 'projects' project.id%}"><img style="width: 70vh; max-height: 70vh;" class="image1 zoomin frame" src="{{project.image.url}}"  style="width: 200px; height: 200px;"alt="Card image cap"></a>
             </div>
             <div class="img-overlay">
         
