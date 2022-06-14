@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import os.path
 from pathlib import Path
-
+from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -21,12 +22,8 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
-cloudinary.config(
-  cloud_name = "imagesfordjango",
-  api_key = "913754811952675",
-  api_secret = "2g7l8hoz9ezx6rrxpNBnAxJLwEs"
-)
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -51,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'peerreview',
     'bootstrap4',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -102,12 +100,13 @@ if config('MODE') == "dev":
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 # production
 else:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }
 
+    DATABASES = {
+        'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+    }
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
