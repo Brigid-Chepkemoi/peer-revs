@@ -7,14 +7,14 @@
 
 
 
-<div class="container ">
-  <div class="row justify-content-center">
+<div class="container " style="margin-top:20px">
+  <div class="row ">
 
-    <div class="col-md-12">
+    <div class="col-md-12" style="display:flex" >
       <div class="col-md-4">
         <!-- <a  href="{%url 'index'%}" class="btn btn-primary my-3 "> Go Back</a> -->
 
-        <div class="project" style="height: 90vh">
+        <div class="project" style="height: 90vh;">
           <a href="{{project.link}}" target="_blank">
 
 
@@ -24,8 +24,8 @@
 
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card" style="width: 18rem; margin-top: 20px;">
+      <div class="col-md-4"style="float:left">
+        <div class="card" style="width: 18rem;">
           <div class="card-body">
             <p>Name Of The Project :{{project.name}}</p>
             <p>Description :{{project.description}}</p>
@@ -34,12 +34,21 @@
             <p>Date :{{project.posted_at| date}}</p>
             <a href="{{project.link}}" target="_blank">Link :</a>
             <button><a href="{{project.link}}" target="_blank">Link</a></button>
+            <br><br>
+             <div class="form">
+          <p class="text-center h3">Rate Project</p>
+          <form action="{%url 'projects' project.id %}" method="post" enctype="multipart/form-data">
+            {%csrf_token%} {% bootstrap_form form %}
+            <input type="submit" class="btn btn-primary" value="Vote" />
+          </form>
+        </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="row">
+      <div class="col-md-4" style="float:left">
 
-        <div class="card" style="width: 18rem; margin-top: 20px;">
+        <div class="card" style="width: 18rem;">
           <div class="card-body">
 
             <p class="text-center h3"> Users Project Rated</p>
@@ -98,29 +107,16 @@
             </div>
           </div>
         </div>
+        </div>
         <br>
 
 
         {% endif %}
 
-
-
-
-
-
       </div>
 
+</div>
+</div>
+</div>
 
-  <div class="col-md-6">
-        <div class="form">
-          <p class="text-center h3">Rate Project</p>
-          <form action="{%url 'projects' project.id %}" method="post" enctype="multipart/form-data">
-            {%csrf_token%} {% bootstrap_form form %}
-            <input type="submit" class="btn btn-primary" value="Vote" />
-          </form>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 {%endblock%}
