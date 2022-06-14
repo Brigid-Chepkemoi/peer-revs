@@ -33,7 +33,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-CLOUD_NAME='de7cwzlea'
+cloud_name='de7cwzlea'
 CLOUDINARY_API_KEY='634526848771819'
 CLOUDINARY_API_SECRET='lnXwswHqpmoxK956gVlySSxsmG8'
 
