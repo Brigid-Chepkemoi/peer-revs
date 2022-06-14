@@ -10,27 +10,27 @@
 <body>
     <nav class ="navbar navbar-light" style=" background-color: #21313b;padding-bottom: 0; ">
         <div class="container-fluid">
-            <div class=" col-sm-4 col-md-4 navbar-header HE"style=" color:aliceblue;">
-                <a href="{%url 'index'%}" class="navbar-brand">Reviews</a>
+            <div class=" col-sm-4 col-md-4 navbar-header HE"style=" color:white; display:flex">
+                <a href="{%url 'index'%}" style="color:white" class="navbar-brand">Reviews</a>
           
                 <div>
-                    <a href="{%url 'profile'%}"class="navbar-brand">Profile</a>
+                    <a href="{%url 'profile'%}" style="color:white" class="navbar-brand">Profile</a>
                 </div>  
                
                 <div>
-                    <a href="{%url 'submit-project'%}"class="navbar-brand">Post Project</a>
+                    <a href="{%url 'submit-project'%}" style="color:white" class="navbar-brand">Post Project</a>
                 </div> 
                 
             <div>
-                <a href="{%url 'django_registration_register'%}"class="navbar-brand">Sign Up</a>
+                <a href="{%url 'django_registration_register'%}" style="color:white" class="navbar-brand">Sign Up</a>
                 </div> 
  
                 <div>
-                    <a href="{%url 'login'%}"class="navbar-brand">Login</a>
+                    <a href="{%url 'login'%}"class="navbar-brand" style="color:white" >Login</a>
                 </div>
                
                 <div>
-                    <a href="{%url 'logout'%}"class="navbar-brand">Logout</a>
+                    <a href="{%url 'logout'%}"class="navbar-brand" style="color:white" >Logout</a>
                 </div>
             </div> 
             <!-- Adding a search form -->
@@ -39,7 +39,7 @@
                     <div class="input-group">
                         <input type="test" class="form-control" placeholder="Search Projects by name" name="project">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            <button class="btn btn-default" style="color:white" type="submit"><i class="glyphicon glyphicon-search"></i>Search</button>
                         </div>
 
                     </div>
