@@ -1,13 +1,12 @@
-# GALAXY INSTA APPLICATION
+# PEER REVIEW APPLICATION
 
 
 ### By: Brigid Chepkemoi
 
 
 ## Description
-A Django instagram clone web application for storing and viewing pictures. 
-It has different categories of the pictures, one can filetr to see the pictures based on locations and categories.
-They can view the descriptions of the pictures and authors.
+A Django AWWARDS clone web application for posting and peer reviewing projects. 
+One can signup and login to post a project to be reviewed by peers, rate other's projects and view all posted projects.
 ## Live Link
 https://peer-revs-app.herokuapp.com/
 
